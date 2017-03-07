@@ -1,0 +1,7 @@
+program negate
+    natural i;
+    boolean b;
+    natural b;
+begin
+    skip;
+end

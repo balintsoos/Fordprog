@@ -1,0 +1,8 @@
+program negate
+    natural i;
+    boolean b;
+begin
+    if i then
+        skip;
+    endif
+end

@@ -1,0 +1,21 @@
+program oszto
+  natural a;
+  natural i;
+  natural oszto;
+  boolean vanoszto;
+begin
+  read(a);
+  vanoszto := false;
+  for i in 2..a-1 do
+    if not vanoszto and a mod i = 0 then
+      vanoszto := true;
+      oszto := i;
+    endif
+  done
+  if vanoszto then
+    write(vanoszto);
+    write(oszto);
+  else
+    write(vanoszto);
+  endif
+end

@@ -1,0 +1,10 @@
+program infinite
+    natural x;
+begin
+    read(x);
+   # while
+    true
+    do
+        write(x);
+    done
+end

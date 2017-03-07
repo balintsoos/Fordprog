@@ -1,0 +1,7 @@
+program inc
+    natural while;
+begin
+    read(while);
+    while := while+1;
+    write(while);
+end

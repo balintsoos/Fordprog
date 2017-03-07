@@ -1,0 +1,7 @@
+program inc
+    natural x;
+begin
+    for x in true..5 do
+        write(x);
+    done
+end
