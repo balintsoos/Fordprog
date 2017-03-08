@@ -13,50 +13,50 @@ LETTER      [a-zA-Z]
 
 "#".*\n     // comment
 
-{DIGIT}+    std::cout << "szamkonstans: " << YYText() << std::endl;
+{DIGIT}+    std::cout << "constant: " << YYText() << std::endl;
 
-program     std::cout << "kucsszo: " << YYText() << std::endl;
-begin       std::cout << "kucsszo: " << YYText() << std::endl;
-end         std::cout << "kucsszo: " << YYText() << std::endl;
-natural     std::cout << "kucsszo: " << YYText() << std::endl;
-bool        std::cout << "kucsszo: " << YYText() << std::endl;
+program     std::cout << "keyword: " << YYText() << std::endl;
+begin       std::cout << "keyword: " << YYText() << std::endl;
+end         std::cout << "keyword: " << YYText() << std::endl;
+natural     std::cout << "keyword: " << YYText() << std::endl;
+boolean     std::cout << "keyword: " << YYText() << std::endl;
 
-true        std::cout << "kucsszo: " << YYText() << std::endl;
-false       std::cout << "kucsszo: " << YYText() << std::endl;
+true        std::cout << "keyword: " << YYText() << std::endl;
+false       std::cout << "keyword: " << YYText() << std::endl;
 
-div         std::cout << "kucsszo: " << YYText() << std::endl;
-mod         std::cout << "kucsszo: " << YYText() << std::endl;
-and         std::cout << "kucsszo: " << YYText() << std::endl;
-or          std::cout << "kucsszo: " << YYText() << std::endl;
-not         std::cout << "kucsszo: " << YYText() << std::endl;
-skip        std::cout << "kucsszo: " << YYText() << std::endl;
+div         std::cout << "keyword: " << YYText() << std::endl;
+mod         std::cout << "keyword: " << YYText() << std::endl;
+and         std::cout << "keyword: " << YYText() << std::endl;
+or          std::cout << "keyword: " << YYText() << std::endl;
+not         std::cout << "keyword: " << YYText() << std::endl;
+skip        std::cout << "keyword: " << YYText() << std::endl;
 
-if          std::cout << "kucsszo: " << YYText() << std::endl;
-then        std::cout << "kucsszo: " << YYText() << std::endl;
-else        std::cout << "kucsszo: " << YYText() << std::endl;
-endif       std::cout << "kucsszo: " << YYText() << std::endl;
+if          std::cout << "keyword: " << YYText() << std::endl;
+then        std::cout << "keyword: " << YYText() << std::endl;
+else        std::cout << "keyword: " << YYText() << std::endl;
+endif       std::cout << "keyword: " << YYText() << std::endl;
 
-while       std::cout << "kucsszo: " << YYText() << std::endl;
-for         std::cout << "kucsszo: " << YYText() << std::endl;
-in          std::cout << "kucsszo: " << YYText() << std::endl;
-do          std::cout << "kucsszo: " << YYText() << std::endl;
-done        std::cout << "kucsszo: " << YYText() << std::endl;
-read        std::cout << "kucsszo: " << YYText() << std::endl;
-write       std::cout << "kucsszo: " << YYText() << std::endl;
+while       std::cout << "keyword: " << YYText() << std::endl;
+for         std::cout << "keyword: " << YYText() << std::endl;
+in          std::cout << "keyword: " << YYText() << std::endl;
+do          std::cout << "keyword: " << YYText() << std::endl;
+done        std::cout << "keyword: " << YYText() << std::endl;
+read        std::cout << "keyword: " << YYText() << std::endl;
+write       std::cout << "keyword: " << YYText() << std::endl;
 
-".."        std::cout << "pontpont" << std::endl;
-";"         std::cout << "utasitas vege" << std::endl;
-"+"         std::cout << "plusz" << std::endl;
-"-"         std::cout << "minusz" << std::endl;
-"*"         std::cout << "szorzas" << std::endl;
-":="        std::cout << "ertekadas" << std::endl;
-"="         std::cout << "egyenlo" << std::endl;
-"<"         std::cout << "kisebb" << std::endl;
-">"         std::cout << "nagyobb" << std::endl;
-"("         std::cout << "balzarojel" << std::endl;
-")"         std::cout << "jobbzarojel" << std::endl;
+".."        std::cout << "dotdot" << std::endl;
+";"         std::cout << "semicolon" << std::endl;
+"+"         std::cout << "plus" << std::endl;
+"-"         std::cout << "minus" << std::endl;
+"*"         std::cout << "asterisk" << std::endl;
+":="        std::cout << "assignment" << std::endl;
+"="         std::cout << "equals" << std::endl;
+"<"         std::cout << "less" << std::endl;
+">"         std::cout << "greater" << std::endl;
+"("         std::cout << "openbracket" << std::endl;
+")"         std::cout << "closebracket" << std::endl;
 
-({LETTER}|_)({LETTER}|{DIGIT}|_)*    std::cout << "azonosito: " << YYText() <<std::endl;
+({LETTER}|_)({LETTER}|{DIGIT}|_)*    std::cout << "variable: " << YYText() <<std::endl;
 
 {WS}+       // whitespaces
 
