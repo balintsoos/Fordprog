@@ -11,46 +11,54 @@ LETTER      [a-zA-Z]
 
 %%
 
-program     std::cout << "program" << std::endl;
-begin       std::cout << "begin" << std::endl;
-end         std::cout << "end" << std::endl;
-integer     std::cout << "integer" << std::endl;
-boolean     std::cout << "boolean" << std::endl;
-skip        std::cout << "skip" << std::endl;
-if          std::cout << "if" << std::endl;
-then        std::cout << "then" << std::endl;
-else        std::cout << "else" << std::endl;
-endif       std::cout << "endif" << std::endl;
-while       std::cout << "while" << std::endl;
-do          std::cout << "do" << std::endl;
-done        std::cout << "done" << std::endl;
-read        std::cout << "read" << std::endl;
-write       std::cout << "write" << std::endl;
+"#".*\n     // comment
+
+{DIGIT}+    std::cout << "szamkonstans: " << YYText() << std::endl;
+
+program     std::cout << "kucsszo: " << YYText() << std::endl;
+begin       std::cout << "kucsszo: " << YYText() << std::endl;
+end         std::cout << "kucsszo: " << YYText() << std::endl;
+natural     std::cout << "kucsszo: " << YYText() << std::endl;
+bool        std::cout << "kucsszo: " << YYText() << std::endl;
+
+true        std::cout << "kucsszo: " << YYText() << std::endl;
+false       std::cout << "kucsszo: " << YYText() << std::endl;
+
+div         std::cout << "kucsszo: " << YYText() << std::endl;
+mod         std::cout << "kucsszo: " << YYText() << std::endl;
+and         std::cout << "kucsszo: " << YYText() << std::endl;
+or          std::cout << "kucsszo: " << YYText() << std::endl;
+not         std::cout << "kucsszo: " << YYText() << std::endl;
+skip        std::cout << "kucsszo: " << YYText() << std::endl;
+
+if          std::cout << "kucsszo: " << YYText() << std::endl;
+then        std::cout << "kucsszo: " << YYText() << std::endl;
+else        std::cout << "kucsszo: " << YYText() << std::endl;
+endif       std::cout << "kucsszo: " << YYText() << std::endl;
+
+while       std::cout << "kucsszo: " << YYText() << std::endl;
+for         std::cout << "kucsszo: " << YYText() << std::endl;
+in          std::cout << "kucsszo: " << YYText() << std::endl;
+do          std::cout << "kucsszo: " << YYText() << std::endl;
+done        std::cout << "kucsszo: " << YYText() << std::endl;
+read        std::cout << "kucsszo: " << YYText() << std::endl;
+write       std::cout << "kucsszo: " << YYText() << std::endl;
+
+".."        std::cout << "pontpont" << std::endl;
 ";"         std::cout << "utasitas vege" << std::endl;
+"+"         std::cout << "plusz" << std::endl;
+"-"         std::cout << "minusz" << std::endl;
+"*"         std::cout << "szorzas" << std::endl;
 ":="        std::cout << "ertekadas" << std::endl;
 "="         std::cout << "egyenlo" << std::endl;
 "<"         std::cout << "kisebb" << std::endl;
 ">"         std::cout << "nagyobb" << std::endl;
-"+"         std::cout << "plusz" << std::endl;
-"-"         std::cout << "minusz" << std::endl;
-"*"         std::cout << "szorzas" << std::endl;
-and         std::cout << "and" << std::endl;
-or          std::cout << "or" << std::endl;
-not         std::cout << "not" << std::endl;
-div         std::cout << "div" << std::endl;
-mod         std::cout << "mod" << std::endl;
 "("         std::cout << "balzarojel" << std::endl;
 ")"         std::cout << "jobbzarojel" << std::endl;
 
-{DIGIT}+    std::cout << "szamkonstans: " << YYText() <<std::endl;
-true        std::cout << "true" << std::endl;
-false       std::cout << "false" << std::endl;
+({LETTER}|_)({LETTER}|{DIGIT}|_)*    std::cout << "azonosito: " << YYText() <<std::endl;
 
-"#".*\n    // nem kell semmit csinalni
-
-{LETTER}({LETTER}|{DIGIT}|_)*    std::cout << "azonosito: " << YYText() <<std::endl;
-
-{WS}+   // feher szokozok: semmi teendo
+{WS}+       // whitespaces
 
 . {
     std::cerr << lineno() << ". sor: Lexikalis hiba!" << std::endl;
