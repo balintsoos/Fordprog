@@ -29,7 +29,7 @@ div         return Parser::DIV;
 mod         return Parser::MOD;
 and         return Parser::AND;
 or          return Parser::OR;
-not         return Parser::not;
+not         return Parser::NOT;
 skip        return Parser::SKIP;
 
 if          return Parser::IF;
