@@ -138,21 +138,21 @@ output:
 ;
 
 branch:
-  IF condition THEN statements ENDIF
+  IF expression THEN statements ENDIF
   {
-    std::cout << "branch -> IF condition THEN statements ENDIF" << std::endl;
+    std::cout << "branch -> IF expression THEN statements ENDIF" << std::endl;
   }
 |
-  IF condition THEN statements ELSE statements ENDIF
+  IF expression THEN statements ELSE statements ENDIF
   {
-    std::cout << "branch -> IF condition THEN statements ELSE statements ENDIF" << std::endif;
+    std::cout << "branch -> IF expression THEN statements ELSE statements ENDIF" << std::endl;
   }
 ;
 
 loop:
-  WHILE condition DO statements DONE
+  WHILE expression DO statements DONE
   {
-    std::cout << "loop -> WHILE condition DO statements DONE" << std::endl;
+    std::cout << "loop -> WHILE expression DO statements DONE" << std::endl;
   }
 |
   FOR VARIABLE IN expression DOTDOT expression DO statements DONE
@@ -201,61 +201,49 @@ expression:
   {
     std::cout << "expression -> OPENBRACKET expression CLOSEBRACKET" << std::endl;
   }
-;
-
-condition:
+|
   TRUE
   {
-    std::cout << "condition -> TRUE" << std::endl;
+    std::cout << "expression -> TRUE" << std::endl;
   }
 |
   FALSE
   {
-    std::cout << "condition -> FALSE" << std::endl;
-  }
-|
-  VARIABLE
-  {
-    std::cout << "condition -> VARIABLE" << std::endl;
+    std::cout << "expression -> FALSE" << std::endl;
   }
 |
   expression EQUALS expression
   {
-    std::cout << "condition -> expression EQUALS expression" << std::endl;
+    std::cout << "expression -> expression EQUALS expression" << std::endl;
   }
 |
   expression GREATER expression
   {
-    std::cout << "condition -> expression GREATER expression" << std::endl;
+    std::cout << "expression -> expression GREATER expression" << std::endl;
   }
 |
   expression LESS expression
   {
-    std::cout << "condition -> expression LESS expression" << std::endl;
+    std::cout << "expression -> expression LESS expression" << std::endl;
   }
 |
-  condition AND condition
+  expression AND expression
   {
-    std::cout << "condition -> condition AND condition" << std::endl;
+    std::cout << "expression -> expression AND expression" << std::endl;
   }
 |
-  condition OR condition
+  expression OR expression
   {
-    std::cout << "condition -> condition OR condition" << std::endl;
+    std::cout << "expression -> expression OR expression" << std::endl;
   }
 |
-  condition EQUALS condition
+  expression EQUALS expression
   {
-    std::cout << "condition -> condition EQUALS condition" << std::endl;
+    std::cout << "expression -> expression EQUALS expression" << std::endl;
   }
 |
-  NOT condition
+  NOT expression
   {
-    std::cout << "condition -> NOT condition" << std::endl;
-  }
-|
-  OPENBRACKET condition CLOSEBRACKET
-  {
-    std::cout << "condition -> OPENBRACKET condition CLOSEBRACKET" << std::endl;
+    std::cout << "expression -> NOT expression" << std::endl;
   }
 ;
