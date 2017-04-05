@@ -160,5 +160,100 @@ loop:
 ;
 
 expression:
+  NUMBER
+  {
+    std::cout << "expression -> NUMBER" << std::endl;
+  }
+|
+  VARIABLE
+  {
+    std::cout << "expression -> VARIABLE" << std::endl;
+  }
+|
+  expression PLUS expression
+  {
+    std::cout << "expression -> expression PLUS expression" << std::endl;
+  }
+|
+  expression MINUS expression
+  {
+    std::cout << "expression -> expression MINUS expression" << std::endl;
+  }
+|
+  expression ASTERISK expression
+  {
+    std::cout << "expression -> expression ASTERISK expression" << std::endl;
+  }
+|
+  expression DIV expression
+  {
+    std::cout << "expression -> expression DIV expression" << std::endl;
+  }
+|
+  expression MOD expression
+  {
+    std::cout << "expression -> expression MOD expression" << std::endl;
+  }
+|
+  OPENBRACKET expression CLOSEBRACKET
+  {
+    std::cout << "expression -> OPENBRACKET expression CLOSEBRACKET" << std::endl;
+  }
+;
 
 condition:
+  TRUE
+  {
+    std::cout << "condition -> TRUE" << std::endl;
+  }
+|
+  FALSE
+  {
+    std::cout << "condition -> FALSE" << std::endl;
+  }
+|
+  VARIABLE
+  {
+    std::cout << "condition -> VARIABLE" << std::endl;
+  }
+|
+  expression EQUALS expression
+  {
+    std::cout << "condition -> expression EQUALS expression" << std::endl;
+  }
+|
+  expression GREATER expression
+  {
+    std::cout << "condition -> expression GREATER expression" << std::endl;
+  }
+|
+  expression LESS expression
+  {
+    std::cout << "condition -> expression LESS expression" << std::endl;
+  }
+|
+  condition AND condition
+  {
+    std::cout << "condition -> condition AND condition" << std::endl;
+  }
+|
+  condition OR condition
+  {
+    std::cout << "condition -> condition OR condition" << std::endl;
+  }
+|
+  condition EQUALS condition
+  {
+    std::cout << "condition -> condition EQUALS condition" << std::endl;
+  }
+|
+  NOT condition
+  {
+    std::cout << "condition -> NOT condition" << std::endl;
+  }
+|
+  OPENBRACKET condition CLOSEBRACKET
+  {
+    std::cout << "condition -> OPENBRACKET condition CLOSEBRACKET" << std::endl;
+  }
+;
