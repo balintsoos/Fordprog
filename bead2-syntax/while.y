@@ -212,11 +212,6 @@ expression:
     std::cout << "expression -> FALSE" << std::endl;
   }
 |
-  expression EQUALS expression
-  {
-    std::cout << "expression -> expression EQUALS expression" << std::endl;
-  }
-|
   expression GREATER expression
   {
     std::cout << "expression -> expression GREATER expression" << std::endl;
