@@ -50,7 +50,7 @@ write       return Parser::WRITE;
 "+"         return Parser::PLUS;
 "-"         return Parser::MINUS;
 "*"         return Parser::ASTERISK;
-":="        return Parser::ASSIGNMENT;
+":="        return Parser::ASSIGN;
 "="         return Parser::EQUALS;
 "<"         return Parser::LESS;
 ">"         return Parser::GREATER;
