@@ -17,7 +17,7 @@ LETTER      [a-zA-Z]
 {DIGIT}+    return Parser::NUMBER;
 
 program     return Parser::PROGRAM;
-begin       return Parser::BEGIN;
+begin       return Parser::BEGINNING;
 end         return Parser::END;
 natural     return Parser::NATURAL;
 boolean     return Parser::BOOLEAN;
@@ -62,7 +62,7 @@ write       return Parser::WRITE;
 {WS}+       // whitespaces
 
 . {
-    std::cerr << "Syntax Error on line" << lineno();
+    std::cerr << "Lexical Error on line " << lineno();
     exit(1);
 }
 
