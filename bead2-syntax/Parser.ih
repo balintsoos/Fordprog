@@ -8,7 +8,7 @@
 
 inline void Parser::error(char const *msg)
 {
-    std::cerr << d_loc__.first_line << ".: Syntax Error" << std::endl;
+    std::cerr << "Syntax Error on line " << d_loc__.first_line << std::endl;
     exit(1);
 }
 
