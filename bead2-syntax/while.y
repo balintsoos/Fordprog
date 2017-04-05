@@ -2,7 +2,7 @@
 %lsp-needed
 
 %token PROGRAM
-%token BEGIN
+%token BEGINNING
 %token END
 
 %token VARIABLE
@@ -42,9 +42,9 @@
 %%
 
 start:
-  PROGRAM VARIABLE declarations BEGIN statements END
+  PROGRAM VARIABLE declarations BEGINNING statements END
   {
-    std::cout << "start -> PROGRAM VARIABLE declarations BEGIN commands END" << std::endl;
+    std::cout << "start -> PROGRAM VARIABLE declarations BEGINNING commands END" << std::endl;
   }
 ;
 
@@ -70,6 +70,7 @@ declaration:
   {
     std::cout << "declaration -> BOOLEAN VARIABLE SEMICOLON" << std::endl;
   }
+;
 
 statements:
   statement
@@ -81,6 +82,7 @@ statements:
   {
     std::cout << "statements -> statement statements" << std::endl;
   }
+;
 
 statement:
   SKIP SEMICOLON
