@@ -15,7 +15,14 @@ inline void Parser::error(char const *msg)
 // $insert lex
 inline int Parser::lex()
 {
+    int ret = lexer.yylex();
     d_loc__.first_line = lexer.lineno();
+
+    if (ret == Parser::NUMBER)
+    {
+        d_val__.text = std::string(lexer.YYText());
+    }
+
     return lexer.yylex();
 }
 

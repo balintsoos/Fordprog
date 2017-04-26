@@ -1,5 +1,13 @@
-%baseclass-preinclude <iostream>
+%baseclass-preinclude "semantics.h"
 %lsp-needed
+
+%union
+{
+  std::string *text;
+  expression_def *expDef;
+}
+
+%token <text> NUMBER
 
 %token PROGRAM
 %token BEGINNING
@@ -38,6 +46,8 @@
 %left GREATER LESS
 %left PLUS MINUS
 %left ASTERISK DIV MOD
+
+%type<expDef> exp
 
 %%
 
