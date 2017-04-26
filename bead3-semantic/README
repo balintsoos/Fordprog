@@ -1,0 +1,11 @@
+A szemantikus elemző lefordítása:
+    make
+
+(Vagy makefile használata nélkül:
+    flex while.l
+    bisonc++ while.y
+    g++ -owhile while.cc parse.cc lex.yy.cc
+)
+
+A szemantikus elemző használata:
+    ./while example.while
