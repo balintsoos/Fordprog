@@ -5,18 +5,17 @@
 {
   std::string *text;
   expression_def *expDef;
+  statement_def *statDef;
 }
-
-%token <text> NUMBER
 
 %token PROGRAM
 %token BEGINNING
 %token END
 
-%token VARIABLE
+%token <text> VARIABLE
 %token NATURAL
 %token BOOLEAN
-%token NUMBER
+%token <text> NUMBER
 %token TRUE
 %token FALSE
 
