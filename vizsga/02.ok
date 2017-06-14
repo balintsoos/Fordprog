@@ -1,0 +1,6 @@
+program example
+  natural n;
+begin
+  read(n);
+  write((n<10 ? true : false));
+end

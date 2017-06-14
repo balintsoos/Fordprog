@@ -1,0 +1,6 @@
+program example
+  natural n;
+begin
+  read(n);
+  write(1 + (n<10 ? 0 : (n<20 ? 10 : 20)));
+end
